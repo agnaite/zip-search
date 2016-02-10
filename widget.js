@@ -1,5 +1,3 @@
-"use strict";
-
 //checks if user input is a 5 digit zip code
 function isValidZip(input) {
   return (/^\d{5}$/).test(input);
