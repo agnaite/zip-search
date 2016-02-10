@@ -1,7 +1,4 @@
-//checks if user input is a 5 digit zip code
-function isValidZip(input) {
-  return (/^\d{5}$/).test(input);
-}
+"use strict";
 
 //on click, creates http request and parses json file if file is found
 document.getElementById("submit").addEventListener("click", function () {
@@ -28,14 +25,6 @@ document.getElementById("submit").addEventListener("click", function () {
 		
     xmlhttp.open("GET", url, true);
 		xmlhttp.send();
-
-		//writes city and state from json file 
-		function zipSearch(data) {
-			var city = data.place_name;
-			var state = data.admin_name1;
-			document.getElementById("city").value = city;
-			document.getElementById("state").value = state; 
-		}
 	}
 	else {
 		//incorrect user entry error
@@ -44,3 +33,16 @@ document.getElementById("submit").addEventListener("click", function () {
 	}
 
 });
+
+//checks if user input is a 5 digit zip code
+function isValidZip(input) {
+  return (/^\d{5}$/).test(input);
+}
+
+//writes city and state from json file 
+function zipSearch(data) {
+  var city = data.place_name;
+  var state = data.admin_name1;
+  document.getElementById("city").value = city;
+  document.getElementById("state").value = state; 
+}
