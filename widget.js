@@ -2,7 +2,7 @@
 
 //on click, creates http request and parses json file if file is found
 document.getElementById("submit").addEventListener("click", function () {
-  var input = document.getElementById("zip").value;
+  var input = document.getElementById("zip").value.trim();
   document.getElementById("city").value = "";
   document.getElementById("state").value = "";
   document.getElementById("error").innerHTML = "";
